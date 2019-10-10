@@ -52,7 +52,7 @@ namespace Business.Library
             return _inventory[index].Amount;
         }
 
-        public void AddItem(Product product, int quantity)
+        public bool AddItem(Product product, int quantity)
         {
             int index;
 
@@ -60,31 +60,41 @@ namespace Business.Library
             {
                 index = _inventory.IndexOf(product);
                 _inventory[index].Amount += quantity;
+                return true;
             }
             else
             {
                 _inventory.Add(product);
                 index = _inventory.IndexOf(product);
                 _inventory[index].Amount+= quantity;
+                return true;
             }
 
         }
 
-        public void RemoveItem(Product product, int quantity)
+        public bool RemoveItem(Product product, int quantity)
         {
             int index = _inventory.IndexOf(product);
             if (index == -1)
             {
                 throw new ArgumentException($"Item {product.Name} is not found in inventory.");
             }
+            else if(_inventory[index].Amount < quantity)
+            {
+                throw new ArgumentException($"Cannot remove the amount requested.");
+                           
+            }
             else if (_inventory[index].Amount == 1)
             {
                 _inventory.Remove(product);
+                return true;
             }
             else
             {
                 _inventory[index].Amount -= quantity;
+                return true;
             }
+            
         }
 
 

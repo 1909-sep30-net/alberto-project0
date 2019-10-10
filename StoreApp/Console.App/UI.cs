@@ -35,24 +35,24 @@ namespace UserInterface.App
             while(selection != "Q")
             { 
                 
-                switch (menu)
-                {
-                    case "Menu":
-                        Console.WriteLine("+----------MAIN MENU----------+");
-                        Console.WriteLine("|      Select an option       |");
-                        Console.WriteLine("| [1] Sign up new customer    |");
-                        Console.WriteLine("| [2] Select store location   |");
-                        Console.WriteLine("| [Q] Quit                    |");
-                        Console.WriteLine("+-----------------------------+");
+                //switch (menu)
+                //{
+                //    case "Menu":
+                //        Console.WriteLine("+----------MAIN MENU----------+");
+                //        Console.WriteLine("|      Select an option       |");
+                //        Console.WriteLine("| [1] Sign up new customer    |");
+                //        Console.WriteLine("| [2] Select store location   |");
+                //        Console.WriteLine("| [Q] Quit                    |");
+                //        Console.WriteLine("+-----------------------------+");
 
-                        selection = Console.ReadLine();
-                        if (selection == "1")
-                        {
+                //        selection = Console.ReadLine();
+                //        if (selection == "1")
+                //        {
                             
                             
-                        }
+                //        }
 
-                }
+                //}
 
                 
             }

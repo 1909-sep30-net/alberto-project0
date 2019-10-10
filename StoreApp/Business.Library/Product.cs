@@ -26,7 +26,7 @@ namespace Business.Library
             set => this._amount = value;
         }
 
-        Product(string name, string description)
+        public Product(string name, string description)
         {
             if(name.Length == 0) 
             {

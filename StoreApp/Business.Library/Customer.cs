@@ -9,7 +9,7 @@ namespace Business.Library
 
         public Customer(string fname, string lname)
         {
-            if ((fname.Length != 0) || (lname.Length != 0))
+            if ((fname.Length == 0) || (lname.Length == 0))
             {
                 throw new ArgumentException("Please enter first and last name.");
             }

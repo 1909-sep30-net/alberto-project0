@@ -18,12 +18,27 @@ namespace Business.Library
         private List<Product> _cart;
         private int _quantity;
 
-        Order(Location location, Customer customer, List<Product> products)
+        public Order(Location location, Customer customer, List<Product> products)
         {
+            if (location == null)
+            {
+                throw new ArgumentException("Location is invalid.");
+            }
+            else
+                this._location = location;
 
-            this._location = location;
-            this._customer = customer;
-            this._cart = products;
+            if (customer == null)
+            {
+                throw new ArgumentException("Customer is invalid.");
+            }
+            else
+                this._customer = customer;
+            if (products == null)
+            {
+                throw new ArgumentException("products is invalid.");
+            }
+            else
+                this._cart = products;
             this._date = DateTime.Now;
         }
 
@@ -54,7 +69,7 @@ namespace Business.Library
             return cart;
         }
 
-        public void AddToCart(Product product, int quantity)
+        public bool AddToCart(Product product, int quantity)
         {
             int index;
 
@@ -65,6 +80,7 @@ namespace Business.Library
                 _cart[index].Amount += quantity;
 
                 _location.RemoveItem(product, quantity);
+                return true;
             }
             else if (_location.Quantity(product) == 0)
             {
