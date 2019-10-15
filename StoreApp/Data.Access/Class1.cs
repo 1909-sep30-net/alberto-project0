@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Data.Library
+namespace Data.Access
 {
     public class Class1
     {

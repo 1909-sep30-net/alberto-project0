@@ -20,8 +20,8 @@ namespace Business.Test
         
 
 
-        Location l_null;
-        Customer c_null;
+        Location l_null = null;
+        Customer c_null = null;
         List<Product> empty_list;
 
 

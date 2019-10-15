@@ -9,6 +9,7 @@ namespace Business.Library
         private string _name;
         private string _description;
         private int _amount;
+        private decimal _price;
 
         public string Name
         {
@@ -26,7 +27,13 @@ namespace Business.Library
             set => this._amount = value;
         }
 
-        public Product(string name, string description)
+        public decimal Price 
+        { 
+            get => _price; 
+            set => this._price = value; 
+        }
+
+        public Product(string name, string description, decimal price)
         {
             if(name.Length == 0) 
             {
@@ -36,10 +43,19 @@ namespace Business.Library
             {
                 throw new ArgumentException("Product description is empty.");
             }
+            else if (price == 0)
+            {
+                throw new ArgumentException("There is no price set");
+            }
+            else if (price == 0)
+            {
+                throw new ArgumentException("There is no price set");
+            }
             else
             {
                 this._name = name;
                 this._description = description;
+                this._price = price;
             }
         }
     }

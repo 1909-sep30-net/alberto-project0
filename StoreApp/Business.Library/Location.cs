@@ -10,6 +10,7 @@ namespace Business.Library
         private string _name;
         private string _address;
         private string _quantity;
+        private Product item = null;
 
         public string LocationName
         {
@@ -26,8 +27,19 @@ namespace Business.Library
             get => this._inventory;
         }
 
+        public void PrintInventory(Product product)
+        {
+            int i = 0;
+            foreach(Product p in Inventory)
+            {
+                Console.WriteLine($"Index: {_inventory.IndexOf(product)}, {p.Name}");
+                i++;
+            }
 
-        public Location(string name, string address)
+        }
+
+
+        public Location(string name)
         {
             if (name.Length == 0)
             {
@@ -36,36 +48,39 @@ namespace Business.Library
             else
                 this._name = name;
 
-            if (address.Length == 0)
-            {
-                throw new ArgumentException("Location address is invalid.");
-            }
-            else
-                this._address = address;
-
             this._inventory = new List<Product> { };
         }
 
         public int Quantity(Product product)
         {
+            //item = new Product(product.Name, product.Description, product.Price);
             int index = _inventory.IndexOf(product);
-            return _inventory[index].Amount;
+            try
+            {
+                return _inventory[index].Amount;
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                Console.WriteLine($"Index is {index}!!!!!!!");
+                return -1;
+            }
         }
 
         public bool AddItem(Product product, int quantity)
         {
+            item = new Product(product.Name, product.Description, product.Price);
             int index;
 
-            if (_inventory.Contains(product))
+            if (_inventory.Contains(item))
             {
-                index = _inventory.IndexOf(product);
+                index = _inventory.IndexOf(item);
                 _inventory[index].Amount += quantity;
                 return true;
             }
             else
             {
-                _inventory.Add(product);
-                index = _inventory.IndexOf(product);
+                _inventory.Add(item);
+                index = _inventory.IndexOf(item);
                 _inventory[index].Amount+= quantity;
                 return true;
             }
@@ -74,10 +89,11 @@ namespace Business.Library
 
         public bool RemoveItem(Product product, int quantity)
         {
+            //item = new Product(product.Name, product.Description, product.Price);
             int index = _inventory.IndexOf(product);
             if (index == -1)
             {
-                throw new ArgumentException($"Item {product.Name} is not found in inventory.");
+                throw new ArgumentException($"Item {item.Name} is not found in inventory.");
             }
             else if(_inventory[index].Amount < quantity)
             {
@@ -86,7 +102,7 @@ namespace Business.Library
             }
             else if (_inventory[index].Amount == 1)
             {
-                _inventory.Remove(product);
+                _inventory.Remove(item);
                 return true;
             }
             else
