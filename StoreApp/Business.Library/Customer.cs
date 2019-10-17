@@ -15,20 +15,25 @@ namespace Business.Library
             }
             else
             {
-                this._firstname = fname;
-                this._lastname = lname;
+                FirstName = fname;
+                LastName = lname;
             }
         }
 
         public string Customername 
         { 
-            get { return this._firstname + " " + this._lastname; }
+            get { return FirstName + " " + LastName; }
             //set { this._firstname = value; }
         }
 
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+        public int ID { get; set; }
 
 
-        
+
+
 
     }
 }

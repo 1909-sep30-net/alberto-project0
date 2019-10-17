@@ -17,16 +17,16 @@ namespace Business.Test
 
         public void Product_Constructor_Name_Check()
         {
-            Assert.ThrowsAny<ArgumentException>(() => new Product(string.Empty, "Mocha flavored"));
+            Assert.ThrowsAny<ArgumentException>(() => new Product(string.Empty, "Mocha flavored",2.0m));
         }
         [Fact]
 
         public void Product_Constructor_Description_Check()
         {
-            Assert.ThrowsAny<ArgumentException>(() => new Product("Frappachino", string.Empty));
+            Assert.ThrowsAny<ArgumentException>(() => new Product("Frappachino", string.Empty, 2.0m));
         }
 
-        Product drink = new Product("Machiato", "Mocha Vanilla");
+        Product drink = new Product("Machiato", "Mocha Vanilla", 2.0m);
         [Fact]
         public void Product_Name_Check()
         {
@@ -41,8 +41,8 @@ namespace Business.Test
         public void Product_Amount_Check()
         {
 
-            Product p = new Product("Steak", "Medium rare");
-            Product p2 = new Product("Milk Shake", "Oreo");
+            Product p = new Product("Steak", "Medium rare", 2.0m);
+            Product p2 = new Product("Milk Shake", "Oreo", 2.0m);
 
             p.Amount += 56;
             p2.Amount += 99;

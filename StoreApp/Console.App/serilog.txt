@@ -1,0 +1,39 @@
+2019-10-16 10:45:49.938 -05:00 [INF] Logger started:
+2019-10-16 10:48:44.192 -05:00 [INF] Logger started:
+2019-10-16 11:47:23.958 -05:00 [INF] Logger started:
+2019-10-16 11:50:44.819 -05:00 [INF] Logger started:
+2019-10-16 11:53:59.241 -05:00 [INF] Logger started:
+2019-10-16 11:58:21.673 -05:00 [INF] Logger started:
+2019-10-16 12:02:58.618 -05:00 [INF] Logger started:
+2019-10-16 12:17:56.259 -05:00 [INF] Logger started:
+2019-10-16 12:54:20.975 -05:00 [INF] Logger started:
+2019-10-16 12:55:44.585 -05:00 [INF] Logger started:
+2019-10-16 12:57:34.718 -05:00 [INF] Logger started:
+2019-10-16 12:59:10.706 -05:00 [INF] Logger started:
+2019-10-16 13:01:54.141 -05:00 [INF] Logger started:
+2019-10-16 13:04:21.593 -05:00 [INF] Logger started:
+2019-10-16 13:55:50.231 -05:00 [INF] Logger started:
+2019-10-16 13:57:04.079 -05:00 [INF] Logger started:
+2019-10-16 14:01:25.091 -05:00 [INF] Logger started:
+2019-10-16 14:09:47.427 -05:00 [INF] Logger started:
+2019-10-16 14:10:23.260 -05:00 [INF] Logger started:
+2019-10-16 14:28:40.641 -05:00 [INF] Logger started:
+2019-10-16 14:28:52.513 -05:00 [INF] Logger started:
+2019-10-16 14:32:00.172 -05:00 [INF] Logger started:
+2019-10-16 14:32:28.617 -05:00 [INF] Logger started:
+2019-10-16 14:33:37.183 -05:00 [INF] Logger started:
+2019-10-16 14:56:23.753 -05:00 [INF] Printing Inventory: Mini Trio || Meal || $8.7500 || 12
+2019-10-16 14:56:23.754 -05:00 [INF] Printing Inventory: Angus Beef || Single || $6.9900 || 14
+2019-10-16 14:56:23.754 -05:00 [INF] Printing Inventory: Wings || Wednesday Special || $0.7500 || 9
+2019-10-16 14:57:07.636 -05:00 [INF] Printing Inventory: Mini Trio || Meal || $8.7500 || 12
+2019-10-16 14:57:07.637 -05:00 [INF] Printing Inventory: Angus Beef || Single || $6.9900 || 14
+2019-10-16 14:57:07.638 -05:00 [INF] Printing Inventory: Wings || Wednesday Special || $0.7500 || 2
+2019-10-16 15:05:46.094 -05:00 [INF] Printing Inventory: Mini Trio || Meal || $8.7500 || 2
+2019-10-16 15:05:46.095 -05:00 [INF] Printing Inventory: Angus Beef || Single || $6.9900 || 14
+2019-10-16 15:05:46.095 -05:00 [INF] Printing Inventory: Wings || Wednesday Special || $0.7500 || 2
+2019-10-16 15:05:51.422 -05:00 [INF] Printing Inventory: Mini Trio || Meal || $8.7500 || 2
+2019-10-16 15:05:51.423 -05:00 [INF] Printing Inventory: Angus Beef || Single || $6.9900 || 14
+2019-10-16 15:05:51.423 -05:00 [INF] Printing Inventory: Wings || Wednesday Special || $0.7500 || 2
+2019-10-16 15:06:00.241 -05:00 [INF] Printing Inventory: Mini Trio || Meal || $8.7500 || 2
+2019-10-16 15:06:00.242 -05:00 [INF] Printing Inventory: Angus Beef || Single || $6.9900 || 14
+2019-10-16 15:06:00.242 -05:00 [INF] Printing Inventory: Wings || Wednesday Special || $0.7500 || 2

@@ -6,40 +6,21 @@ namespace Business.Library
 {
     public class Location
     {
-        private List<Product> _inventory;
         private string _name;
-        private string _address;
-        private string _quantity;
+        
         private Product item = null;
 
+        public int ID { get; set; }
         public string LocationName
         {
             get => this._name;
         }
 
-        public string LocationAddress
-        {
-            get => this._address;
-        }
 
-        public List<Product> Inventory
-        {
-            get => this._inventory;
-        }
-
-        public void PrintInventory(Product product)
-        {
-            int i = 0;
-            foreach(Product p in Inventory)
-            {
-                Console.WriteLine($"Index: {_inventory.IndexOf(product)}, {p.Name}");
-                i++;
-            }
-
-        }
+        public List<Inventory> Inventory { get; set; } = new List<Inventory> { };
 
 
-        public Location(string name)
+    public Location(string name)
         {
             if (name.Length == 0)
             {
@@ -48,16 +29,16 @@ namespace Business.Library
             else
                 this._name = name;
 
-            this._inventory = new List<Product> { };
+            
         }
 
-        public int Quantity(Product product)
+        public int Quantity(Inventory product)
         {
             //item = new Product(product.Name, product.Description, product.Price);
-            int index = _inventory.IndexOf(product);
+            int index = Inventory.IndexOf(product);
             try
             {
-                return _inventory[index].Amount;
+                return product.quantity;
             }
             catch(ArgumentOutOfRangeException)
             {
@@ -68,50 +49,52 @@ namespace Business.Library
 
         public bool AddItem(Product product, int quantity)
         {
-            item = new Product(product.Name, product.Description, product.Price);
-            int index;
-
-            if (_inventory.Contains(item))
-            {
-                index = _inventory.IndexOf(item);
-                _inventory[index].Amount += quantity;
-                return true;
-            }
-            else
-            {
-                _inventory.Add(item);
-                index = _inventory.IndexOf(item);
-                _inventory[index].Amount+= quantity;
-                return true;
-            }
-
-        }
-
-        public bool RemoveItem(Product product, int quantity)
-        {
             //item = new Product(product.Name, product.Description, product.Price);
-            int index = _inventory.IndexOf(product);
-            if (index == -1)
-            {
-                throw new ArgumentException($"Item {item.Name} is not found in inventory.");
-            }
-            else if(_inventory[index].Amount < quantity)
-            {
-                throw new ArgumentException($"Cannot remove the amount requested.");
-                           
-            }
-            else if (_inventory[index].Amount == 1)
-            {
-                _inventory.Remove(item);
-                return true;
-            }
-            else
-            {
-                _inventory[index].Amount -= quantity;
-                return true;
-            }
-            
+            //int index;
+
+            //if (Inventory.Contains(item))
+            //{
+            //    index = Inventory.IndexOf(item);
+            //    Inventory[index].Amount += quantity;
+            //    return true;
+            //}
+            //else
+            //{
+            //    Inventory.Add(item);
+            //    index = Inventory.IndexOf(item);
+            //    Inventory[index].Amount+= quantity;
+            //    return true;
+            //}
+            return true;
+
         }
+
+        //public bool RemoveItem(Inventory item, int quantity, Repository data)
+        //{
+        //    //item = new Product(product.Name, product.Description, product.Price);
+        //    int index = Inventory.IndexOf(item.Product);
+        //    if (index == -1)
+        //    {
+        //        throw new ArgumentException($"Item {item.Name} is not found in inventory.");
+        //    }
+        //    else if (Inventory[index].Amount < quantity)
+        //    {
+        //        throw new ArgumentException($"Cannot remove the amount requested.");
+
+        //    }
+        //    else if (Inventory[index].Amount == 1)
+        //    {
+        //        Inventory.Remove(item);
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        Inventory[index].Amount -= quantity;
+        //        return true;
+        //    }
+        //    return true;
+            
+        //}
 
 
 

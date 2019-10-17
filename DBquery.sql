@@ -1,67 +1,47 @@
-CREATE TABLE [Customer] (
-  [id] int PRIMARY KEY IDENTITY(1, 1),
-  [full_name] nvarchar(255)
+CREATE TABLE [Customers] (
+  [id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
+  [firstName] nvarchar(255) NOT NULL,
+  [lastName] nvarchar(255) NOT NULL,
 )
 GO
 
-CREATE TABLE [Location] (
-  [id] int PRIMARY KEY IDENTITY(1, 1),
-  [name] nvarchar(255),
-  [product_id] int
+CREATE TABLE [Locations] (
+  [id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
+  [name] nvarchar(255) NOT NULL,
 )
 GO
 
-CREATE TABLE [Product] (
-  [id] int PRIMARY KEY IDENTITY(1, 1),
-  [name] nvarchar(255),
-  [description] nvarchar(255),
-  [price] decimal,
-  [quantity] int
+CREATE TABLE [Products] (
+  [id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
+  [name] nvarchar(255) NOT NULL,
+  [description] nvarchar(255) NOT NULL,
+  [price] Money NOT NULL,
 )
 GO
 
 CREATE TABLE [Order_Details] (
-  [order_id] int,
-  [product_id] int,
-  [quantity] int
+  [orderDetail_id] int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+  [order_id] int FOREIGN KEY REFERENCES [Orders](id) NOT NULL,
+  [product_id] int FOREIGN KEY REFERENCES [Products](id) NOT NULL,
+  [quantity] int NOT NULL
 )
 GO
 
 CREATE TABLE [Orders] (
-  [id] int PRIMARY KEY IDENTITY(1, 1),
-  [location_id] int,
-  [customer_id] int,
-  [created_at] nvarchar(255),
-  [total] decimal,
-  [quantity] int
+  [id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
+  [location_id] int FOREIGN KEY REFERENCES [Locations](id) NOT NULL,
+  [customer_id] int FOREIGN KEY REFERENCES [Customers](id) NOT NULL,
+  [created_at] datetime2 NOT NULL,
+  [total] money NOT NULL,
 )
 GO
 
 CREATE TABLE [Inventory] (
-  [id] int PRIMARY KEY IDENTITY(1, 1),
-  [location_id] int,
-  [product_id] int,
-  [quantity] int
+  [id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
+  [location_id] int FOREIGN KEY REFERENCES [Locations](id) NOT NULL,
+  [product_id] int FOREIGN KEY REFERENCES [Products](id) NOT NULL,
+  [quantity] int NOT NULL,
 )
 GO
 
-ALTER TABLE [Product] ADD FOREIGN KEY ([id]) REFERENCES [Location] ([product_id])
-GO
 
-ALTER TABLE [Order_Details] ADD FOREIGN KEY ([order_id]) REFERENCES [Orders] ([id])
-GO
-
-ALTER TABLE [Order_Details] ADD FOREIGN KEY ([product_id]) REFERENCES [Product] ([id])
-GO
-
-ALTER TABLE [Orders] ADD FOREIGN KEY ([location_id]) REFERENCES [Location] ([id])
-GO
-
-ALTER TABLE [Orders] ADD FOREIGN KEY ([customer_id]) REFERENCES [Customer] ([id])
-GO
-
-ALTER TABLE [Inventory] ADD FOREIGN KEY ([location_id]) REFERENCES [Location] ([id])
-GO
-
-ALTER TABLE [Inventory] ADD FOREIGN KEY ([product_id]) REFERENCES [Product] ([id])
-GO

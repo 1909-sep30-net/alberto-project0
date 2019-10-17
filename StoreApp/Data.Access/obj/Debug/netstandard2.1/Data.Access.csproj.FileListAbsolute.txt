@@ -1,8 +1,11 @@
-C:\revature\alberto-project0\StoreApp\Data.Access\bin\Debug\netstandard2.1\Data.Access.deps.json
-C:\revature\alberto-project0\StoreApp\Data.Access\bin\Debug\netstandard2.1\Data.Access.dll
-C:\revature\alberto-project0\StoreApp\Data.Access\bin\Debug\netstandard2.1\Data.Access.pdb
 C:\revature\alberto-project0\StoreApp\Data.Access\obj\Debug\netstandard2.1\Data.Access.csprojAssemblyReference.cache
 C:\revature\alberto-project0\StoreApp\Data.Access\obj\Debug\netstandard2.1\Data.Access.AssemblyInfoInputs.cache
 C:\revature\alberto-project0\StoreApp\Data.Access\obj\Debug\netstandard2.1\Data.Access.AssemblyInfo.cs
+C:\revature\alberto-project0\StoreApp\Data.Access\bin\Debug\netstandard2.1\Data.Access.deps.json
+C:\revature\alberto-project0\StoreApp\Data.Access\bin\Debug\netstandard2.1\Data.Access.dll
+C:\revature\alberto-project0\StoreApp\Data.Access\bin\Debug\netstandard2.1\Data.Access.pdb
+C:\revature\alberto-project0\StoreApp\Data.Access\bin\Debug\netstandard2.1\Business.Library.dll
+C:\revature\alberto-project0\StoreApp\Data.Access\bin\Debug\netstandard2.1\Business.Library.pdb
+C:\revature\alberto-project0\StoreApp\Data.Access\obj\Debug\netstandard2.1\Data.Access.csproj.CopyComplete
 C:\revature\alberto-project0\StoreApp\Data.Access\obj\Debug\netstandard2.1\Data.Access.dll
 C:\revature\alberto-project0\StoreApp\Data.Access\obj\Debug\netstandard2.1\Data.Access.pdb

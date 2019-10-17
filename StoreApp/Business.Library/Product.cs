@@ -11,6 +11,7 @@ namespace Business.Library
         private int _amount;
         private decimal _price;
 
+        public int ID { get; set; }
         public string Name
         {
             get => this._name;
